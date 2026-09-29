@@ -1,7 +1,7 @@
 package com.sid.billingservice.feign;
 
 
-import com.sid.billingservice.entities.ProductItem;
+import com.sid.billingservice.models.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface InentoryServiceRrestClient {
 
     @GetMapping("/products/{id}")
-    ProductItem findByProductId(@PathVariable Long id);
+    Product findByProductId(@PathVariable("id") Long id);
 
 
 }

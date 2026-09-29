@@ -1,5 +1,6 @@
 package com.sid.billingservice.entities;
 
+import com.sid.billingservice.models.Customer;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +16,9 @@ public class Bill {
     private Date date;
     private long customerId;
     @OneToMany(mappedBy = "bill", cascade = CascadeType.ALL)
-    private List<ProductItem> items;
 
+    private List<ProductItem> items;
+    @Transient
+    private Customer customer;
 
 }
